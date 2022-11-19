@@ -1,0 +1,18 @@
+﻿@model Torneo
+
+<h1>BIENVENIDO AL INFORME DEL TORNEO</h1>
+
+
+<form asp-action="CreacionDeTorneo">
+  <div class="form-outline mb-4">
+    <input asp-for="Nombre" type="text" class="form-control" />
+    <label class="form-label" for="form1Example1">Nombre del Torneo address</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input asp-for="Anio" type="text" class="form-control" />
+    <label class="form-label">Anio del Torneo</label>
+  </div>
+    <button asp-action="CreacionDeTorneo" type="submit" class="btn btn-primary btn-block w-100">Crear Torneo</button>
+</form>
+
