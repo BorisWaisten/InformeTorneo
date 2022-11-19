@@ -1,0 +1,40 @@
+﻿@model Informe
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Informe del torneo @Model.torneo.Nombre @Model.torneo.Anio</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.equipos)
+    {
+        <tr>
+            <td>
+                <label>@item.Nombre</label>
+            </td>
+            <td>
+                <label>@item.Puntos</label>
+            </td>
+            <td>
+                <label>@item.PartidosGanados</label>
+            </td>
+            <td>
+                <label>@item.PartidosEmpatados</label>
+            </td>
+            <td>
+                <label>@item.PartidosPerdidos</label>
+            </td>
+            <td>
+                <label>@item.GolesAFavor</label>
+            </td>
+            <td>
+                <label>@item.GolesEnContra</label>
+            </td>
+            <td>
+                <label>@item.DiferenciaDeGoles</label>
+            </td>
+        </tr>
+        
+    }
+</table>
+<h1>INFORME TORNEO</h1>

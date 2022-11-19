@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InformeTorneo.Migrations
 {
     [DbContext(typeof(TorneoContext))]
-    [Migration("20221119024330_initial")]
-    partial class initial
+    [Migration("20221119200815_agregacionTorneo")]
+    partial class agregacionTorneo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

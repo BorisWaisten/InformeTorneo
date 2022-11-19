@@ -18,9 +18,9 @@ namespace InformeTorneo.Controllers
             using(TorneoContext context = new())
             {
                 context.Torneos.Add(torneo);
-                //context.SaveChanges();
+                context.SaveChanges();
             }
-            return RedirectToAction(nameof(CreacionDeTorneo));
+            return View();
         }
         
         [HttpGet]
@@ -36,7 +36,7 @@ namespace InformeTorneo.Controllers
             {
                 
                 context.Equipos.Add(equipo);
-                //context.SaveChanges();
+                context.SaveChanges();
             }
             return RedirectToAction(nameof(CreacionDeTorneo));
         }
@@ -44,10 +44,15 @@ namespace InformeTorneo.Controllers
         [HttpPost]
         public IActionResult MostrarInforme()
         {
+            Informe informe = new();
             using (TorneoContext context = new())
             {
+                informe.torneo=context.Torneos.First();
+                informe.equipos= context.Equipos.ToList();
+                context.Informes.Add(informe);
+                context.SaveChanges();
             }
-            return View();
+            return View(informe);
         }
 
     }

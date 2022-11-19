@@ -10,6 +10,8 @@ namespace InformeTorneo.Models
         }
         public DbSet<Torneo> Torneos { get; set; }
         public DbSet<Equipo> Equipos { get; set; }
+        public DbSet<Informe> Informes{ get; set; }
+
 
     }
 }
