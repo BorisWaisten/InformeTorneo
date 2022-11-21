@@ -4,10 +4,16 @@ namespace InformeTorneo.Models
 {
     public class Equipo
     {
+        private int puntos;
+        private int dif;
+
         [Key]
         public string Nombre{ get; set; }
         [Required]
-        public int Puntos { get; set; }
+        public int Puntos {   
+            get{ return puntos; }
+            set{ puntos = value; } 
+        }
         [Required]
         public int PartidosGanados { get; set; }
         [Required]
@@ -19,7 +25,17 @@ namespace InformeTorneo.Models
         [Required]
         public int GolesEnContra { get; set; }
         [Required]
-        public int DiferenciaDeGoles { get; set; }
+        public int DiferenciaDeGoles { 
+            get {return dif; } 
+            set { dif=value; } 
+        }
+
+        public void CalcularDatas()
+        {
+            puntos = (this.PartidosGanados * 3) + (this.PartidosEmpatados * 1);
+            dif = this.GolesAFavor - this.GolesEnContra;
+        }
+
 
 
     }

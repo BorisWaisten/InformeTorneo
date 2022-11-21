@@ -1,12 +1,45 @@
 ﻿@model Informe
 
+@{
+    var equiposOrdenados = Model.equipos.OrderByDescending(Equipo => Equipo.Puntos).ThenByDescending(Equipo => Equipo.DiferenciaDeGoles).ToList();
+}
+
 <table class="table">
     <thead>
         <tr>
             <th>Informe del torneo @Model.torneo.Nombre @Model.torneo.Anio</th>
         </tr>
+        <tr>
+            <th>
+                <label>Nombre</label>
+            </th>
+            <th>
+                <label>PT</label>
+            </th>
+            <th>
+                <label>PG</label>
+            </th>
+            <th>
+                <label>PE</label>
+            </th>
+            <th>
+                <label>PP</label>
+            </th>
+            <th>
+                <label>GF</label>
+            </th>
+            <th>
+                <label>GC</label>
+            </th>
+            <th>
+                <label>DF</label>
+            </th>
+        </tr>
+        <
     </thead>
-    @foreach (var item in Model.equipos)
+    <tbody>
+
+    @foreach (var item in equiposOrdenados)
     {
         <tr>
             <td>
@@ -33,8 +66,15 @@
             <td>
                 <label>@item.DiferenciaDeGoles</label>
             </td>
+            <td>
+                <a asp-action="EditarDato" asp-route-nombre="@item.Nombre" class="btn btn-outline-primary">Editar</a>
+            </td>
         </tr>
-        
     }
+    </tbody>
+    <tfoot>
+        <tr>
+            <a asp-action="CreacionDeTorneo" class="btn btn-primary btn-block w-100">Agregar Equipo</a>
+        </tr>
+    </tfoot>
 </table>
-<h1>INFORME TORNEO</h1>
