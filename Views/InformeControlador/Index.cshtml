@@ -1,17 +1,15 @@
 ﻿@model Torneo
 
-<h1>BIENVENIDO AL INFORME DEL TORNEO</h1>
+<h1>Ingrese los datos correspondientes</h1>
 
 
 <form asp-action="CreacionDeTorneo">
   <div class="form-outline mb-4">
-    <input asp-for="Nombre" type="text" class="form-control" />
-    <label class="form-label" for="form1Example1">Nombre del Torneo address</label>
+    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre del torneo"/>
   </div>
 
   <div class="form-outline mb-4">
-    <input asp-for="Anio" type="text" class="form-control" />
-    <label class="form-label">Anio del Torneo</label>
+        <input asp-for="Anio" type="text" class="form-control" placeholder="Anio del torneo" />
   </div>
     <button asp-action="CreacionDeTorneo" type="submit" class="btn btn-primary btn-block w-100">Crear Torneo</button>
 </form>

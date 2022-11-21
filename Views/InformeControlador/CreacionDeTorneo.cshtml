@@ -7,11 +7,6 @@
         <input asp-for="Nombre" type="text" class="form-control" />
         <label class="form-label" for="form1Example1">Nombre del Equipo</label>
     </div>
-
-    <div class="form-outline mb-4">
-        <input asp-for="Puntos" type="text" class="form-control" />
-        <label class="form-label">Puntos</label>
-    </div>
     <div class="form-outline mb-4">
         <input asp-for="PartidosGanados" type="text" class="form-control" />
         <label class="form-label">Partidos Ganados</label>
@@ -32,11 +27,13 @@
         <input asp-for="GolesEnContra" type="text" class="form-control" />
         <label class="form-label">Goles En Contra</label>
     </div>
-    <div class="form-outline mb-4">
-        <input asp-for="DiferenciaDeGoles" type="text" class="form-control" />
-        <label class="form-label">Diferencia De Goles</label>
+    <div class="row">
+        <div class="col">
+             <button asp-action="AgregarEquipo" type="submit" class="btn btn-primary btn-block w-100">Agregar Equipo</button> 
+        </div>
+        <div class="col">
+            <button asp-action="MostrarInforme" type="submit" class="btn btn-primary btn-block w-100">Mostrar Informe</button>  
+        </div>
     </div>
-    <button asp-action="AgregarEquipo" type="submit" class="btn btn-primary btn-block w-100">Agregar Equipo</button>
-    <button asp-action="MostrarInforme" type="submit" class="btn btn-primary btn-block w-100">No Agregar Mas/Mostrar Informe</button>
 </form>
 
