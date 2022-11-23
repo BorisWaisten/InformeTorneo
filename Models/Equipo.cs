@@ -36,16 +36,5 @@ namespace InformeTorneo.Models
             dif = this.GolesAFavor - this.GolesEnContra;
         }
 
-        public bool ValidarDatos()
-        {
-            bool validarDatos = false;
-            int partidos = this.PartidosPerdidos + this.PartidosGanados + this.PartidosEmpatados;
-            if(partidos > 0 && partidos <= 38){
-                if(this.GolesEnContra > 0 && this.GolesAFavor>0){
-                    validarDatos = true;
-                }
-            }
-            return validarDatos;
-        }
     }
 }
