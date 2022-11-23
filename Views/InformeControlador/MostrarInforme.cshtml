@@ -1,5 +1,10 @@
 ﻿@model Informe
 
+@{
+    var equiposOrdenados = Model.equipos.OrderByDescending(Equipo => Equipo.Puntos).ThenByDescending(Equipo => Equipo.DiferenciaDeGoles).ToList();
+}
+
+
 <table class="table">
     <thead>
         <tr>
