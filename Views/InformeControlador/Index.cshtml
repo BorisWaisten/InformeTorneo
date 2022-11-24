@@ -5,11 +5,11 @@
 
 <form asp-action="CreacionDeTorneo">
   <div class="form-outline mb-4">
-    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre del torneo"/>
+    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre del torneo" required/>
   </div>
 
   <div class="form-outline mb-4">
-        <input asp-for="Anio" type="text" class="form-control" placeholder="Anio del torneo" />
+        <input asp-for="Anio" type="text" class="form-control" placeholder="Anio del torneo" required/>
   </div>
     <button asp-action="CreacionDeTorneo" type="submit" class="btn btn-primary btn-block w-100">Crear Torneo</button>
 </form>

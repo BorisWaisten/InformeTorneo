@@ -68,8 +68,11 @@
                 <label>@item.DiferenciaDeGoles</label>
             </td>
             <td>
-                <a asp-action="EditarDato" asp-route-nombre="@item.Nombre" class="btn btn-outline-primary">Editar</a>
+                <a asp-action="EditarDato" asp-route-nombre="@item.Nombre" class="btn btn-outline-warning">Editar</a>
             </td>
+                <td>
+                    <a asp-action="BorrarDato" asp-route-nombre="@item.Nombre" class="btn btn-outline-danger">Borrar</a>
+                </td>
         </tr>
     }
         <tr>

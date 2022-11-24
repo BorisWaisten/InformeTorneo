@@ -4,27 +4,27 @@
 
 <form asp-action="AgregarEquipo">
     <div class="form-outline mb-4">
-        <input asp-for="Nombre" type="text" class="form-control" />
+        <input asp-for="Nombre" type="text" class="form-control" required />
         <label class="form-label" for="form1Example1">Nombre del Equipo</label>
     </div>
     <div class="form-outline mb-4">
-        <input asp-for="PartidosGanados" type="text" class="form-control" />
+        <input asp-for="PartidosGanados" type="text" class="form-control" required min="0" />
         <label class="form-label">Partidos Ganados</label>
     </div>
     <div class="form-outline mb-4">
-        <input asp-for="PartidosPerdidos" type="text" class="form-control" />
+        <input asp-for="PartidosPerdidos" type="text" class="form-control" required min="0" />
         <label class="form-label">Partidos Perdidos</label>
     </div>
     <div class="form-outline mb-4">
-        <input asp-for="PartidosEmpatados" type="text" class="form-control" />
+        <input asp-for="PartidosEmpatados" type="text" class="form-control" required min="0" />
         <label class="form-label">Partidos Empatados</label>
     </div>
     <div class="form-outline mb-4">
-        <input asp-for="GolesAFavor" type="text" class="form-control" />
+        <input asp-for="GolesAFavor" type="text" class="form-control" required min="0" />
         <label class="form-label">Goles A Favor</label>
     </div>
     <div class="form-outline mb-4">
-        <input asp-for="GolesEnContra" type="text" class="form-control" />
+        <input asp-for="GolesEnContra" type="text" class="form-control" required min="0"/>
         <label class="form-label">Goles En Contra</label>
     </div>
     <div class="row">
@@ -32,7 +32,7 @@
              <button asp-action="AgregarEquipo" type="submit" class="btn btn-primary btn-block w-100">Agregar Equipo</button> 
         </div>
         <div class="col">
-            <button asp-action="MostrarInforme" type="submit" class="btn btn-primary btn-block w-100">Mostrar Informe</button>  
+            <button asp-action="MostrarInforme" type="submit" class="btn btn-primary btn-block w-100" formnovalidate>Mostrar Informe</button>  
         </div>
     </div>
 </form>

@@ -44,6 +44,9 @@ namespace InformeTorneo.Controllers
         {
             if (!equipo.ValidarDatos())
             {
+               
+                ViewBag.Msg = "El ingreso de cantidad de partidos debe ser menor a 38";
+               
                 return RedirectToAction(nameof(CreacionDeTorneo));
             }
             using (TorneoContext context = new())
@@ -55,7 +58,7 @@ namespace InformeTorneo.Controllers
             return RedirectToAction(nameof(CreacionDeTorneo));
         }
 
-        [HttpPost]
+
         public IActionResult MostrarInforme()
         {
             Informe informe = new();
@@ -103,12 +106,34 @@ namespace InformeTorneo.Controllers
             Informe informe = new();
             using (TorneoContext context = new())
             {
+                equipoEditado.CalcularDatas();
                 context.Equipos.Update(equipoEditado);
                 informe.equipos = context.Equipos.ToList();
-                equipoEditado.CalcularDatas();
                 context.SaveChanges();
             }
-            return RedirectToAction(nameof(MostrarInforme));
+            return RedirectToAction(nameof(MostrarInforme), informe);
+        }
+
+
+        public IActionResult BorrarDato(String nombre)
+        {
+            using (TorneoContext context = new())
+            {
+                Informe informe = new();
+                Equipo? equipoBorrado = context.Equipos.Find(nombre);
+                if (equipoBorrado != null)
+                {
+                    context.Equipos.Remove(equipoBorrado);
+                    informe.equipos = context.Equipos.ToList();
+                    context.SaveChanges();
+
+                    return RedirectToAction(nameof(MostrarInforme), informe);
+                }
+                else
+                {
+                    return RedirectToAction(nameof(MostrarInforme),informe);
+                }
+            }
         }
 
     }
